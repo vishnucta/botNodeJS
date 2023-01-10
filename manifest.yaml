@@ -1,0 +1,10 @@
+---
+applications:
+- name: botnodejs
+  # command: node server.js
+  memory: 128M
+  buildpacks:
+  - nodejs_buildpack
+  services:
+  - connectivity-bot-01
+  - destination-bot-01
