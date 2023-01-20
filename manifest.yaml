@@ -8,3 +8,4 @@ applications:
   services:
   - connectivity-bot-01
   - destination-bot-01
+  - xsuaa-sales-list

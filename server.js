@@ -6,6 +6,14 @@ var url = require('url')
 const app = express()
 const xsenv = require('@sap/xsenv')
 const https = require('https');
+const { JWTStrategy } = require("@sap/xssec");
+const passport = require("passport");
+
+passport.use(new JWTStrategy(xsenv.getServices({ uaa: { tag: "xsuaa" } }).uaa));
+
+app.use(passport.initialize());
+app.use(passport.authenticate("JWT", { session: false }));
+
 // const rp = require('request-promise');
 xsenv.loadEnv();
 var queryParam;
