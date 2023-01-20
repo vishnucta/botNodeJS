@@ -6,7 +6,7 @@ var url = require('url')
 const app = express()
 const xsenv = require('@sap/xsenv')
 const https = require('https');
-const rp = require('request-promise');
+// const rp = require('request-promise');
 xsenv.loadEnv();
 var queryParam;
 //to get data from VCAP_SERVICES:: Applications running in Cloud Foundry gain access 
@@ -112,7 +112,8 @@ const _poDetails = async function (connProxyHost, connProxyPort, connJwtToken, d
     return new Promise((resolve, reject) => {
         // make target URL 
         // const targetUrl = destiConfi.URL + "/C_PurchaseOrderTP(PurchaseOrder='" + queryParam.number + "',DraftUUID=guid'00000000-0000-0000-0000-000000000000',IsActiveEntity=true)"
-        const targetUrl = destiConfi.URL + "/SalesOrderSet('0500000001')/ToLineItems"
+        // const targetUrl = destiConfi.URL + "/SalesOrderSet('0500000001')/ToLineItems"
+        const targetUrl = destiConfi.URL + "/SalesOrderSet('0500000001')"
         console.log(targetUrl)
         //encode user creds fetched from the destination configuration
         const encodedUser = Buffer.from(destiConfi.User + ':' + destiConfi.Password).toString("base64")

@@ -1,6 +1,6 @@
 ---
 applications:
-- name: botnodejs
+- name: botnodejswithauth
   # command: node server.js
   memory: 128M
   buildpacks:
