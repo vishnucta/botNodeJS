@@ -1,6 +1,6 @@
 ---
 applications:
-- name: botnodejs
+- name: botnodejswithauth
   # command: node server.js
   memory: 128M
   buildpacks:
@@ -8,3 +8,4 @@ applications:
   services:
   - connectivity-bot-01
   - destination-bot-01
+  - xsuaa-sales-list

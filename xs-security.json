@@ -1,0 +1,33 @@
+{
+  "xsappname": "sales-list",
+  "tenant-mode": "dedicated",
+  "scopes": [
+    {
+      "name": "$XSAPPNAME.read",
+      "description": "Role to read data"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "viewer",
+      "description": "Viewer Role",
+      "scope-references": [
+        "$XSAPPNAME.read"
+      ]
+    }
+  ],
+  "role-collections": [
+    {
+      "name": "salesReadRoleCollections",
+      "description": "Sales Role Collection",
+      "role-template-references": [
+        "$XSAPPNAME.viewer"
+      ]
+    }
+  ],
+  "oauth2-configuration": {
+    "redirect-uris": [
+    "https://*.cfapps.us10-001.hana.ondemand.com/**"
+    ]
+   }
+}
